@@ -5,12 +5,22 @@ input.addEventListener("blur", ()=>{
 const dataLength = Number(input.dataset.length)
 const inputLength = input.value.length;
 
+
+function listToggle(element, a , b)
+{
+  element.classList.remove(a);
+  element.classList.add(b);
+}
+
+
 if (inputLength === dataLength) {
-  input.classList.remove("invalid");
-  input.classList.add("valid");
+  listToggle(input, "invalid" , "valid")
+
+
 } else {
-  input.classList.remove("valid");
- input.classList.add("invalid");
+  listToggle(input, "valid" , "invalid")
+  
+ 
 }
 
 
